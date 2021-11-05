@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+    <!-- Pegar siempre al final del head -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Prueba con atributos de las etiquetas</h1>
+        <h1>Asi no sirve</h1>
+        <img src="{{img.src}}">
+        <h1>Asi sí sirve</h1>
+        <!-- Las llaves ya no son necesarias -->
+        <img v-bind:src="img.src" height="200">
+        <h1>Asi tambien sirve</h1>
+        <!-- Los dos puntos sirven de abreviacion -->
+        <img :src="img.src" height="200">
+    </div>
+    <!-- Importante montar la el objeto de Vue antes de cerrar el body -->
+    <script>
+        const mountApp = app.mount('#app');
+    </script>
+</body>
+</html>

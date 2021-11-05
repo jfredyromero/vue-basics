@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Pegar siempre al final del head -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Ciclos de listas</h1>
+        <!-- Imprimir una lista simple -->
+        <ul>
+            <li v-for="hobbie in user.hobbies">{{hobbie}}</li>
+        </ul>
+        <hr>
+        <!-- Imprimir lista y su indice -->
+        <ul>
+            <li v-for="(hobbie, indice) in user.hobbies">Elemento {{indice}} ==> {{hobbie}}</li>
+        </ul>
+        <hr>
+        <!-- Agregar etiqueta key, la cual agrega un identificador unico a cada elemento dentro de Vue -->
+        <ul>
+            <li v-for="(hobbie, indice) in user.hobbies" :key="indice">{{hobbie}}</li>
+        </ul>
+    </div>
+    <!-- Importante montar la el objeto de Vue antes de cerrar el body -->
+    <script>
+        const mountApp = app.mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+    <!-- Pegar siempre al final del head -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Prueba con variables</h1>
+        <h1>{{title}}</h1> 
+        <h2>My name is {{name}}</h2>
+        <h2>I'm {{age}} years old</h2>
+        <hr>
+        <h1>Prueba con objetos</h1>
+        <h2>Obj: {{user}}</h2>
+        <h2>My name is {{user.name}} {{user.lastName}}, I'm 22 years old and my crush is {{user.crush}}</h2>
+        <hr>
+        <h1>Usando operaciones logicas</h1>
+        <h2>user.age < 18 ? "You're a kid" : "You're and adult" ==> {{user.age < 18 ? "You're a kid" : "You're and adult"}}</h2>
+        <hr>
+        <h1>Usando listas</h1>
+        <h2>user.hobbies ==> {{user.hobbies}}</h2>
+        <h2>user.hobbies[0] ==> {{user.hobbies[0]}}</h2>
+        <h2>user.hobbies[1] ==> {{user.hobbies[1]}}</h2>
+        <h2>user.hobbies[2] ==> {{user.hobbies[2]}}</h2>
+    </div>
+    <!-- Importante montar el objeto de Vue antes de cerrar el body -->
+    <script>
+        const mountApp = app.mount('#app');
+    </script>
+</body>
+</html>
